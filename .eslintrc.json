@@ -20,7 +20,13 @@
     "import/no-unresolved": "off",
     "no-shadow": "off",
     "no-param-reassign": "off",
-    "comma-dangle": "warn"
+    "comma-dangle": "warn",
+    "jsx-a11y/label-has-associated-control": [ 2, {
+    "labelComponents": ["CustomInputLabel"],
+    "labelAttributes": ["label"],
+    "controlComponents": ["CustomInput"],
+    "depth": 3
+    }]
   },
   "ignorePatterns": ["dist/", "build/"]
 }
