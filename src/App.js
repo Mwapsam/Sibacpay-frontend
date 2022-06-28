@@ -1,20 +1,23 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Login from './pages/auth/Login';
-import Signup from './pages/auth/Signup';
+/* eslint-disable import/no-named-as-default */
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import LoginPage from './pages/auth/Login';
+import SignupPage from './pages/auth/Signup';
+import Dashboard from './pages/Dashboard';
+import PrivateRoutes from './components/routes/PrivateRoutes';
+import MultiForm from './components/MultiForm';
 
 function App() {
   return (
-    <div className="min-h-full h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
-        <BrowserRouter>
-          <Routes>
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-          </Routes>
-        </BrowserRouter>
-      </div>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/dashboard" element={<PrivateRoutes><Dashboard /></PrivateRoutes>} />
+        <Route path="/multiform" element={<MultiForm />} />
+      </Routes>
+    </>
   );
 }
 
